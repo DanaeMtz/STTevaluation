@@ -73,20 +73,24 @@ See the f1_score_numbers_corpusgen.xlsx file for details.
 
 | Engin     | Recall  | Precision | F1-score |
 |-----------|---------|-----------|----------|
-| Nuance    | 0.982   |  0.986    | 0.984    |
-| Genesys   | 0.976   |  0.979    | 0.977    |
-| Microsoft | 0.986   |  0.993    | 0.990    |
+| Nuance    | 0.925   |  1.00     | 0.961    |
+| Genesys   | 0.044   |  1.00     | 0.085    |
+| Microsoft | 0.716   |  1.00     | 0.834    |
 
-See the f1_score_banking_corpusgen.xlsx file for details. 
+See the f1_score_bank_corpusgen.xlsx file for details. 
 
 
 #### Examples of common mistakes 
 
-| Engin      | Transcript Reference| Transcript Nuance | Transcript Genesys | Transcript Microsoft |
-|------------|---------------------|-------------------|--------------------|----------------------|
-| Reference  | compte d'épargne    | compte **départ** | **car départ**     | compte d'épargne     |    
-|            | compte CELI         | compte CELI       | compte **celui**   | compte **celui**     |
-|            | à mon compte REER   | à mon compte REER | **ramon contraire**| à mon compte **aéré**|
-|            | mon CELI            | mon CELI          | mon **cédit**      | mon **CI**           |
-|            | CELI                | **merci**         | **c'est lit**      | **ces lits**         |
-|            | céduler             | **c'est Jul**     | cédule             | **c'est du lait**    | 
+| Transcript Reference| Transcript Nuance | Transcript Genesys | Transcript Microsoft |
+|---------------------|-------------------|--------------------|----------------------|
+| compte d'épargne    | compte **départ** | **car départ**     | compte d'épargne     |    
+| compte CELI         | compte CELI       | compte **celui**   | compte **celui**     |
+| à mon compte REER   | à mon compte REER | **ramon contraire**| à mon compte **aéré**|
+| mon CELI            | mon CELI          | mon **cédit**      | mon **CI**           |
+| CELI                | **merci**         | **si**             | **CDI**              |
+| CELI                | CELI              |  **c'est lit**     |  **ces lits**        |
+| le REER             | le REER           | le r               | le **rayer**         |
+| mon REER            | mon REER          | mon                | **mourir**           |
+| mes REER            | mon REER          | **marre**          | **merrier**          |
+| céduler             | **c'est Jul**     | cédule             | **c'est du lait**    | 

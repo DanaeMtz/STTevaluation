@@ -1,14 +1,15 @@
 import pandas as pd
 from sttevaluator.preprocessing import preprocessing
+from sttevaluator.f1score import f1_score
 import re 
 
 def main():
     # read the data 
-    df = pd.read_csv("data/transcripts.csv", encoding="utf-8")
-    #df = df.iloc[:61, :] # numbers 
-    df = df.iloc[61:, :] # general corpus 
+    # df = pd.read_csv("data/transcripts.csv", encoding="utf-8")
+    # df = df.iloc[:61, :] # numbers 
+    # df = df.iloc[61:, :] # general corpus 
     # nuance = df.loc[:, "nuance"].tolist()
-    microsoft = df.loc[:, "microsoft"].tolist()
+    # microsoft = df.loc[:, "microsoft"].tolist()
     # reference = df.loc[:, "reference"].tolist()
     # print(nuance[2])
     # print([re.findall(r"\d+\s\d{3}\s\$",sentence) for sentence in nuance])
@@ -18,7 +19,9 @@ def main():
 
     # print(reference[2])
     # print(preprocessing(nuance[2]))
-    print([re.findall(r"celi|céli|reer|réer|nip|bnc|ferr",sentence) for sentence in microsoft])
+    # print([re.findall(r"celi|céli|reer|réer|nip|bnc|ferr",sentence) for sentence in microsoft])
+    
+    print(f1_score(1, 0.7164179104477613))
 
 if __name__ == '__main__':
     main()
