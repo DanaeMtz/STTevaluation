@@ -76,7 +76,7 @@ def main():
         ]
     )
 
-    df.to_excel("results/f1_score_banking_corpusgen.xlsx", index=False, encoding="utf-8")
+    df.to_excel("results/f1_score_bank_corpusgen.xlsx", index=False, encoding="utf-8")
 
 
 if __name__ == "__main__":

@@ -50,11 +50,11 @@ See the f1_score_numbers.xlsx file for details.
 
 ### Corpus 670, focus on numeric entities
 
-| Engin     | Recall  | Precision | F1-score |
-|-----------|---------|-----------|----------|
-| Nuance    | 0.925   |  0.905    | 0.915    |
-| Genesys   | 0.907   |  0.916    | 0.911    |
-| Microsoft | 0.927   |  0.939    | 0.933    |
+| Engin     | Recall | Precision | F1-score |
+|-----------|--------|-----------|----------|
+| Nuance    | 0.925  |  0.905    | 0.915    |
+| Genesys   | 0.907  |  0.916    | 0.911    |
+| Microsoft | 0.927  |  0.939    | 0.933    |
 
 See the f1_score_numbers_corpusgen.xlsx file for details. 
 
@@ -63,10 +63,10 @@ See the f1_score_numbers_corpusgen.xlsx file for details.
 ### Overall performance on Corpus 670
 
 | Engin    | WER (without lemmatization) |
-|----------|------|
-| Nuance   |0.088 |
-| Genesys  |0.142 |
-| Microsoft|0.075 |
+|----------|-------|
+| Nuance   | 0.088 |
+| Genesys  | 0.142 |
+| Microsoft| 0.075 |
 
 
 ### Corpus 670, focus on banking terms
@@ -77,31 +77,16 @@ See the f1_score_numbers_corpusgen.xlsx file for details.
 | Genesys   | 0.976   |  0.979    | 0.977    |
 | Microsoft | 0.986   |  0.993    | 0.990    |
 
-See the f1_score_bankterms.xlsx file for details. 
+See the f1_score_banking_corpusgen.xlsx file for details. 
 
 
 #### Examples of common mistakes 
 
-| Engin      | Transcript |
-|------------|------------|
-| Reference  |compte d'épargne|
-|            |compte CELI |
-|            |à compte REER|
-|            |céduler     |
-|            |            |
-| Nuance     |compte **départ** |
-|            |compte CELI   |
-|            |à compte REER |
-|            |**c'est Jul** |
-|            |              |
-| Genesys    |**car départ**|
-|            |compte **celui**|
-|            |**ramon contraire**|
-|            |à mon **compter** |
-|            |cédule          |
-|            |          |
-| Microsoft  |compte d'épargne|
-|            |compte **celui**|
-|            |à mon compte **aéré**|
-|            |à mon compte **réer**|
-|            |**c'est du lait**|  
+| Engin      | Transcript Reference| Transcript Nuance | Transcript Genesys | Transcript Microsoft |
+|------------|---------------------|-------------------|--------------------|----------------------|
+| Reference  | compte d'épargne    | compte **départ** | **car départ**     | compte d'épargne     |    
+|            | compte CELI         | compte CELI       | compte **celui**   | compte **celui**     |
+|            | à mon compte REER   | à mon compte REER | **ramon contraire**| à mon compte **aéré**|
+|            | mon CELI            | mon CELI          | mon **cédit**      | mon **CI**           |
+|            | CELI                | **merci**         | **c'est lit**      | **ces lits**         |
+|            | céduler             | **c'est Jul**     | cédule             | **c'est du lait**    | 

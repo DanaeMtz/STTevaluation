@@ -6,6 +6,7 @@ import num2words
 def preprocessing(phase: str) -> str:
     # Microsoft 
     transformed_phase = re.sub(r",00", "", phase.lower())  # eliminate the parsing of microsoft for integers 
+    transformed_phase = re.sub(r"réer", "reer", transformed_phase)
     # Genesys
     transformed_phase = re.sub(r"euh", "", transformed_phase) 
     # Nuance 
