@@ -8,9 +8,14 @@ def preprocessing(phase: str) -> str:
     transformed_phase = re.sub(r",00", "", phase.lower())  # eliminate the parsing of microsoft for integers 
     # Genesys
     transformed_phase = re.sub(r"euh", "", transformed_phase) 
+    # Nuance 
+    transformed_phase = re.sub(r"(?P<thousands>\d+)\s(?P<hundreds>\d{3}\s\$)", "\g<thousands>\g<hundreds>", transformed_phase)
+    # eliminate the space between thousands and hundreds ( ex. 51 766 $ should be 51 766 $) 
+    
     # reference 
-    transformed_phase = re.sub(r"\Whésitation\W|\Wagent\sdit\sok\W", "", transformed_phase) 
+    # transformed_phase = re.sub(r"\Whésitation\W|\Wagent\sdit\sok\W", "", transformed_phase) 
     # [mot]|[agent dit hmh]|[agent dit: d'accord]|[agent dit: mhm]|[rire] to be considered in the computation 
+
     # Microsoft & Nuance 
     transformed_phase = re.sub(r"\$", " dollars", transformed_phase) # replace $ by the word dollars
     # Microsoft & Nuance & Reference 

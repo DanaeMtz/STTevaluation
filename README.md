@@ -37,49 +37,37 @@ The entities considered in this exercise are:
 
 ### Results 
 
-### Corpus 421 
+### Corpus 61, focus on numeric entities
 
+| Engin     | Recall  | Precision | F1-score |
+|-----------|---------|-----------|----------|
+| Nuance    | 0.982   |  0.986    | 0.984    |
+| Genesys   | 0.976   |  0.979    | 0.977    |
+| Microsoft | 0.986   |  0.993    | 0.990    |
+
+See the f1_score_numbers.xlsx file for details. 
+
+
+### Overall performance on Corpus 670
 
 | Engin    | WER (without lemmatization) |
 |----------|------|
 | Nuance   |0.096 |
 | Microsoft|0.084 |
-//| Verint   |0.39  |
 | Genesys  |0.157 |
 
 
-**numeric entities**
+### Corpus 670, focus on banking terms
 
-| Engin     | Recall | Precision | F1-score |
-|-----------|--------|-----------|----------|
-| Nuance    | 0.92   |  0.92     | 0.92     |
-| Genesys   | 0.90   |  0.93     | 0.92     |
-| Microsoft | 0.93   |  0.94     | 0.94     |
+| Engin     | Recall  | Precision | F1-score |
+|-----------|---------|-----------|----------|
+| Nuance    | 0.982   |  0.986    | 0.984    |
+| Genesys   | 0.976   |  0.979    | 0.977    |
+| Microsoft | 0.986   |  0.993    | 0.990    |
 
-**banking entities**
-
-| Engin      | Recall | Precision | F1-score |
-|------------|--------|-----------|----------|
-| Nuance     |0.9     |1.00       |0.95      |
-| Genesys    |0.07    |1.00       |0.13      |
-| Microsoft  |0.65    |1.00       |0.78      |
+See the f1_score_bankterms.xlsx file for details. 
 
 
-### Corpus 61
-
-| Engin    | WER (without lemmatization) |
-|----------|------|
-| Nuance   |0.102 |
-| Microsoft|0.126 |
-| Genesys  |0.196 |
-
-**numeric entities**
-
-| Engin     | Recall | Precision | F1-score |
-|-----------|--------|-----------|----------|
-| Nuance    | 0.94   |  0.98     | 0.96     |
-| Genesys   | 0.97   |  0.98     | 0.98     |
-| Microsoft | 0.98   |  0.99     | 0.99     |
 
 
 #### Examples of common mistakes 

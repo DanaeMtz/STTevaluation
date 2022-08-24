@@ -9,18 +9,20 @@ import pandas as pd
 def main():
     df = pd.read_csv("data/transcripts.csv", encoding="utf-8")
     df = df.iloc[:61, :]  # numbers only
-    # df = df.iloc[61:, :]  # general corpus
+    #df = df.iloc[61:, :]  # general corpus
 
     nuance = df.loc[:, "nuance"].tolist()
     genesys = df.loc[:, "genesys"].tolist()
     reference = df.loc[:, "reference"].tolist()
     microsoft = df.loc[:, "microsoft"].tolist()
     file_id = df.loc[:, "file_id"].tolist()
+    print(nuance[2])
 
     referen_clean = list(map(preprocessing_all, reference))
     nuance_clean = list(map(preprocessing_all, nuance))
     genesys_clean = list(map(preprocessing_all, genesys))
     microsoft_clean = list(map(preprocessing_all, microsoft))
+    print(nuance_clean[2])
 
     # tokenization
     referen_tokens = list(map(tokenize_all, referen_clean))
