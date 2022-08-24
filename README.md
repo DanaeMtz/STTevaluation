@@ -48,6 +48,18 @@ The entities considered in this exercise are:
 See the f1_score_numbers.xlsx file for details. 
 
 
+### Corpus 670, focus on numeric entities
+
+| Engin     | Recall  | Precision | F1-score |
+|-----------|---------|-----------|----------|
+| Nuance    | 0.925   |  0.905    | 0.915    |
+| Genesys   | 0.907   |  0.916    | 0.911    |
+| Microsoft | 0.927   |  0.939    | 0.933    |
+
+See the f1_score_numbers_corpusgen.xlsx file for details. 
+
+
+
 ### Overall performance on Corpus 670
 
 | Engin    | WER (without lemmatization) |
@@ -66,8 +78,6 @@ See the f1_score_numbers.xlsx file for details.
 | Microsoft | 0.986   |  0.993    | 0.990    |
 
 See the f1_score_bankterms.xlsx file for details. 
-
-
 
 
 #### Examples of common mistakes 

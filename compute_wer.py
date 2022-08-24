@@ -6,7 +6,7 @@ import pandas as pd
 
 def main():
     # read the data
-    df = pd.read_csv("data/transcripts.csv", encoding="utf-8")
+    df = pd.read_csv("data/transcripts_new.csv", encoding="utf-8")
     # df = df.iloc[:61, :] # numbers
     df = df.iloc[61:, :]  # general corpus
 
@@ -35,40 +35,27 @@ def main():
     wer_genesys, global_wer_genesys = compute_wer(referen_tokens, genesys_tokens)
     wer_microsoft, global_wer_microsoft = compute_wer(referen_tokens, microsoft_tokens)
 
-    wer_results = pd.DataFrame(
-        list(
-            zip(
-                file_id,
-                reference, 
-                referen_clean,
-                nuance, 
-                nuance_clean,
-                wer_nuance,
-                genesys,
-                genesys_clean,
-                wer_genesys,
-                microsoft, 
-                microsoft_clean,
-                wer_microsoft,
-            )
-        ),
+    df["wer_nuance"] = wer_nuance
+    df["wer_genesys"] = wer_genesys
+    df["wer_microsoft"] = wer_microsoft
+
+
+
+    df = df.reindex(
         columns=[
             "file_id",
-            "reference"
-            "reference_clean",
+            "reference",
             "nuance",
-            "nuance_clean"
             "wer_nuance",
             "genesys",
-            "genesys_clean"
             "wer_genesys",
             "microsoft",
-            "microsoft_clean"
             "wer_microsoft",
-        ],
+        ]
     )
-    wer_results.to_excel(
-        "results/wer_results.xlsx", index=False, encoding="utf-8"
+
+    df.to_excel(
+        "results/wer_corpusgen.xlsx", index=False, encoding="utf-8"
     )
 
 
