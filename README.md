@@ -64,9 +64,9 @@ See the f1_score_numbers_corpusgen.xlsx file for details.
 
 | Engin    | WER (without lemmatization) |
 |----------|------|
-| Nuance   |0.096 |
-| Microsoft|0.084 |
-| Genesys  |0.157 |
+| Nuance   |0.088 |
+| Genesys  |0.142 |
+| Microsoft|0.075 |
 
 
 ### Corpus 670, focus on banking terms

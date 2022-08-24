@@ -30,13 +30,13 @@ def main():
 
     # compute precision and recall
 
-    # with open("data/bank_entities.txt", encoding="utf-8") as f:
-    #     bank_entities = [line.rstrip() for line in f]
+    with open("data/bank_entities.txt", encoding="utf-8") as f:
+        bank_entities = [line.rstrip() for line in f]
 
-    with open("data/number_entities.txt", encoding="utf-8") as f:
-        number_entities = [line.rstrip() for line in f]
+    # with open("data/number_entities.txt", encoding="utf-8") as f:
+    #     number_entities = [line.rstrip() for line in f]
 
-    entities = number_entities
+    entities = bank_entities
 
     recall_nuance = pseudo_recall(referen_tokens, nuance_tokens, entities)
     recall_genesys = pseudo_recall(referen_tokens, genesys_tokens, entities)
@@ -76,7 +76,7 @@ def main():
         ]
     )
 
-    df.to_excel("results/f1_score_numbers_corpusgen.xlsx", index=False, encoding="utf-8")
+    df.to_excel("results/f1_score_banking_corpusgen.xlsx", index=False, encoding="utf-8")
 
 
 if __name__ == "__main__":
