@@ -62,7 +62,7 @@ See the f1_score_numbers_corpusgen.xlsx file for details.
 
 ### Overall performance on Corpus 670
 
-| Engin    | WER (without lemmatization) |
+| Engin    | WER   |
 |----------|-------|
 | Nuance   | 0.088 |
 | Genesys  | 0.142 |

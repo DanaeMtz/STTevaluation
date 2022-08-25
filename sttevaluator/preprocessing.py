@@ -11,7 +11,7 @@ def preprocessing(phase: str) -> str:
     transformed_phase = re.sub(r"euh", "", transformed_phase) 
     # Nuance 
     transformed_phase = re.sub(r"(?P<thousands>\d+)\s(?P<hundreds>\d{3}\s\$)", "\g<thousands>\g<hundreds>", transformed_phase)
-    # eliminate the space between thousands and hundreds ( ex. 51 766 $ should be 51 766 $) 
+    # eliminate the space between thousands and hundreds ( ex. 51 766 $ should be 51766 $) 
     
     # reference 
     # transformed_phase = re.sub(r"\Whésitation\W|\Wagent\sdit\sok\W", "", transformed_phase) 
