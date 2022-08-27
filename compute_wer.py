@@ -21,13 +21,18 @@ def main():
     genesys_clean = list(map(preprocessing_all, genesys))
     microsoft_clean = list(map(preprocessing_all, microsoft))
 
-    # clean_transcriptions = pd.DataFrame(list(zip(file_id, referen_clean, nuance_clean, genesys_clean, microsoft_clean)),columns =["file_id", "reference", "nuance", "genesys", "microsoft"])
-    # clean_transcriptions.to_csv("results/clean_transcriptions.csv", index=False, encoding='utf-8')
+    clean_transcriptions = pd.DataFrame(
+        list(zip(file_id, referen_clean, nuance_clean, genesys_clean, microsoft_clean)),
+        columns=["file_id", "reference", "nuance", "genesys", "microsoft"],
+    )
+    clean_transcriptions.to_csv(
+        "results/clean_transcriptions.csv", index=False, encoding="utf-8"
+    )
 
     # tokenization
     referen_tokens = list(map(tokenize_all, referen_clean))
     nuance_tokens = list(map(tokenize_all, nuance_clean))
-    genesys_tokens = clean_genesys_tokens(list(map(tokenize_all, genesys_clean)))
+    genesys_tokens = list(map(tokenize_all, genesys_clean))
     microsoft_tokens = list(map(tokenize_all, microsoft_clean))
 
     # compute wer
@@ -38,8 +43,6 @@ def main():
     df["wer_nuance"] = wer_nuance
     df["wer_genesys"] = wer_genesys
     df["wer_microsoft"] = wer_microsoft
-
-
 
     df = df.reindex(
         columns=[
@@ -54,9 +57,7 @@ def main():
         ]
     )
 
-    df.to_excel(
-        "results/wer_corpusgen.xlsx", index=False, encoding="utf-8"
-    )
+    df.to_excel("results/wer_corpusgen.xlsx", index=False, encoding="utf-8")
 
 
 if __name__ == "__main__":

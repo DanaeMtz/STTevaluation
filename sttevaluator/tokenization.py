@@ -17,6 +17,25 @@ def tokenize(phase: str) -> str:
 tokenize_all = lambda phase: tokenize(phase)
 
 
+def tokenize_lemmatize(sentenses: str) -> str:
+    """Generate lemmatized tokens using spacy"""
+    nlp = spacy.load("fr_core_news_md")
+    tokenizer = nlp.tokenizer
+
+    # tokenized_lemmatized_sentences = [
+    #     [token.lemma_ for token in tokenizer(sentence)] for sentence in sentenses
+    # ]
+    # lemmatized_sentences = [
+    #     " ".join(tokens) for tokens in tokenized_lemmatized_sentences
+    # ]
+    # return tokenized_lemmatized_sentences, lemmatized_sentences
+
+    return [token.lemma_ for token in tokenizer(phase)] 
+
+
+tokenize_lemmatize_all = lambda phase: tokenize_lemmatize(phase)
+
+
 def clean_genesys_tokens(tokens: List) -> List:
     """Eliminate numbers at the begining of the transcription"""
     it_nums = []

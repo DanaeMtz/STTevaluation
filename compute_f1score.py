@@ -8,8 +8,8 @@ import pandas as pd
 
 def main():
     df = pd.read_csv("data/transcripts_new.csv", encoding="utf-8")
-    #df = df.iloc[:61, :]  # numbers only
-    df = df.iloc[61:, :]  # general corpus
+    df = df.iloc[:61, :]  # numbers only
+    #df = df.iloc[61:, :]  # general corpus
 
     nuance = df.loc[:, "nuance"].tolist()
     genesys = df.loc[:, "genesys"].tolist()
@@ -25,18 +25,18 @@ def main():
     # tokenization
     referen_tokens = list(map(tokenize_all, referen_clean))
     nuance_tokens = list(map(tokenize_all, nuance_clean))
-    genesys_tokens = clean_genesys_tokens(list(map(tokenize_all, genesys_clean)))
+    genesys_tokens = list(map(tokenize_all, genesys_clean))
     microsoft_tokens = list(map(tokenize_all, microsoft_clean))
 
     # compute precision and recall
 
-    with open("data/bank_entities.txt", encoding="utf-8") as f:
-        bank_entities = [line.rstrip() for line in f]
+    # with open("data/bank_entities.txt", encoding="utf-8") as f:
+    #     bank_entities = [line.rstrip() for line in f]
 
-    # with open("data/number_entities.txt", encoding="utf-8") as f:
-    #     number_entities = [line.rstrip() for line in f]
+    with open("data/number_entities.txt", encoding="utf-8") as f:
+        number_entities = [line.rstrip() for line in f]
 
-    entities = bank_entities
+    entities = number_entities
 
     recall_nuance = pseudo_recall(referen_tokens, nuance_tokens, entities)
     recall_genesys = pseudo_recall(referen_tokens, genesys_tokens, entities)
@@ -76,7 +76,7 @@ def main():
         ]
     )
 
-    df.to_excel("results/f1_score_bank_corpusgen.xlsx", index=False, encoding="utf-8")
+    df.to_excel("results/f1_score_numbers.xlsx", index=False, encoding="utf-8")
 
 
 if __name__ == "__main__":

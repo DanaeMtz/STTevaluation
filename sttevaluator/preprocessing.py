@@ -8,7 +8,16 @@ def preprocessing(phase: str) -> str:
     transformed_phase = re.sub(r",00", "", phase.lower())  # eliminate the parsing of microsoft for integers 
     transformed_phase = re.sub(r"réer", "reer", transformed_phase)
     # Genesys
-    transformed_phase = re.sub(r"euh", "", transformed_phase) 
+    transformed_phase = re.sub(r"euh", "", transformed_phase)
+    transformed_phase = re.sub(r"^(dix\s(?:sept|huit|neuf)\s{1})", "", transformed_phase)
+    transformed_phase = re.sub(
+        r"^(vingt\s(?:et\sun|deux|trois|quatre|cinq)\s{1})", "", transformed_phase
+    )
+    transformed_phase = re.sub(
+        r"^(un|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|onze|douze|treize|quatorze|quinze|seize|vingt)\s{1}",
+        "",
+        transformed_phase,
+    )
     # Nuance 
     transformed_phase = re.sub(r"(?P<thousands>\d+)\s(?P<hundreds>\d{3}\s\$)", "\g<thousands>\g<hundreds>", transformed_phase)
     # eliminate the space between thousands and hundreds ( ex. 51 766 $ should be 51766 $) 
