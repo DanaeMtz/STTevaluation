@@ -78,7 +78,7 @@ See the f1_score_numbers_corpusgen.xlsx file for details.
 | Nuance       | 0.925   |  1.00     | 0.961    |
 | Genesys      | 0.044   |  1.00     | 0.085    |
 | Microsoft    | 0.716   |  1.00     | 0.834    |
-| Microsoft dlm| 0.776   |  0.98     | 0.866    |
+| Microsoft dlm| 0.805   |  0.98     | 0.885    |
 
 See the f1_score_bank_corpusgen.xlsx file for details. 
 

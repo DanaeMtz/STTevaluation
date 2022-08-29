@@ -7,6 +7,7 @@ def preprocessing(phase: str) -> str:
     # Microsoft 
     transformed_phase = re.sub(r",00", "", phase.lower())  # eliminate the parsing of microsoft for integers 
     transformed_phase = re.sub(r"réer", "reer", transformed_phase)
+    transformed_phase = re.sub(r"céli", "celi", transformed_phase)
     # Genesys
     transformed_phase = re.sub(r"euh", "", transformed_phase)
     transformed_phase = re.sub(r"^(dix\s(?:sept|huit|neuf)\s{1})", "", transformed_phase)
