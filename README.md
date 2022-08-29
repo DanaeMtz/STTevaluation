@@ -39,43 +39,46 @@ The entities considered in this exercise are:
 
 ### Corpus 61, focus on numeric entities
 
-| Engin     | Recall  | Precision | F1-score |
-|-----------|---------|-----------|----------|
-| Nuance    | 0.982   |  0.986    | 0.984    |
-| Genesys   | 0.976   |  0.979    | 0.977    |
-| Microsoft | 0.986   |  0.993    | 0.990    |
+| Engin         | Recall  | Precision | F1-score |
+|---------------|---------|-----------|----------|
+| Nuance        | 0.982   |  0.986    | 0.984    |
+| Genesys       | 0.976   |  0.979    | 0.977    |
+| Microsoft     | 0.986   |  0.993    | 0.990    |
+| Microsoft dlm | 0.989   |  0.994    | 0.991    |
 
 See the f1_score_numbers.xlsx file for details. 
 
 
 ### Corpus 670, focus on numeric entities
 
-| Engin     | Recall | Precision | F1-score |
-|-----------|--------|-----------|----------|
-| Nuance    | 0.925  |  0.905    | 0.915    |
-| Genesys   | 0.907  |  0.916    | 0.911    |
-| Microsoft | 0.927  |  0.939    | 0.933    |
+| Engin         | Recall | Precision | F1-score |
+|---------------|--------|-----------|----------|
+| Nuance        | 0.925  |  0.905    | 0.915    |
+| Genesys       | 0.907  |  0.916    | 0.911    |
+| Microsoft     | 0.927  |  0.939    | 0.933    |
+| Microsoft dlm | 0.938  |  0.941    | 0.939    |
 
 See the f1_score_numbers_corpusgen.xlsx file for details. 
 
-
-
 ### Overall performance on Corpus 670
 
-| Engin    | WER   |
-|----------|-------|
-| Nuance   | 0.088 |
-| Genesys  | 0.142 |
-| Microsoft| 0.075 |
+| Engin         | WER   |
+|---------------|-------|
+| Nuance        | 0.088 |
+| Genesys       | 0.142 |
+| Microsoft     | 0.075 |
+| Microsoft dlm | 0.060 |
+
 
 
 ### Corpus 670, focus on banking terms
 
-| Engin     | Recall  | Precision | F1-score |
-|-----------|---------|-----------|----------|
-| Nuance    | 0.925   |  1.00     | 0.961    |
-| Genesys   | 0.044   |  1.00     | 0.085    |
-| Microsoft | 0.716   |  1.00     | 0.834    |
+| Engin        | Recall  | Precision | F1-score |
+|--------------|---------|-----------|----------|
+| Nuance       | 0.925   |  1.00     | 0.961    |
+| Genesys      | 0.044   |  1.00     | 0.085    |
+| Microsoft    | 0.716   |  1.00     | 0.834    |
+| Microsoft dlm| 0.776   |  0.98     | 0.866    |
 
 See the f1_score_bank_corpusgen.xlsx file for details. 
 
