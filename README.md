@@ -90,10 +90,14 @@ See the f1_score_bank_corpusgen.xlsx file for details.
 | compte d'épargne    | compte **départ** | **car départ**     | compte d'épargne     |    
 | compte CELI         | compte CELI       | compte **celui**   | compte **celui**     |
 | à mon compte REER   | à mon compte REER | **ramon contraire**| à mon compte **aéré**|
-| mon CELI            | mon CELI          | mon **cédit**      | mon **CI**           |
-| CELI                | **merci**         | **si**             | **CDI**              |
-| CELI                | CELI              |  **c'est lit**     |  **ces lits**        |
-| le REER             | le REER           | le r               | le **rayer**         |
-| mon REER            | mon REER          | mon                | **mourir**           |
-| mes REER            | mon REER          | **marre**          | **merrier**          |
 | céduler             | **c'est Jul**     | cédule             | **c'est du lait**    | 
+
+
+| Transcript Reference| Transcript Nuance | Transcript Genesys | Transcript Microsoft | Transcript Microsoft DLM |
+|---------------------|-------------------|--------------------|----------------------|--------------------------|
+| mon CELI            | mon CELI          | mon **cédit**      | mon **CI**           | mon **CD**               |
+| CELI                | **merci**         | **si**             | **CDI**              | **style D**              |
+| CELI                | CELI              |  **c'est lit**     |  **ces lits**        | **ces lits**             |
+| le REER             | le REER           | le **r**           | le **rayer**         | le réer                  |
+| mon REER            | mon REER          | mon                | **mourir**           | **mourir**               |
+| mes REER            | mon REER          | **marre**          | **merrier**          | mes réer                 |
