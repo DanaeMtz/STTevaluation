@@ -8,6 +8,7 @@ def preprocessing(phase: str) -> str:
     transformed_phase = re.sub(r",00", "", phase.lower())  # eliminate the parsing of microsoft for integers 
     transformed_phase = re.sub(r"réer", "reer", transformed_phase)
     transformed_phase = re.sub(r"céli", "celi", transformed_phase)
+    
     # Genesys
     transformed_phase = re.sub(r"euh", "", transformed_phase)
     transformed_phase = re.sub(r"^(dix\s(?:sept|huit|neuf)\s{1})", "", transformed_phase)
@@ -27,7 +28,9 @@ def preprocessing(phase: str) -> str:
     # transformed_phase = re.sub(r"\Whésitation\W|\Wagent\sdit\sok\W", "", transformed_phase) 
     # [mot]|[agent dit hmh]|[agent dit: d'accord]|[agent dit: mhm]|[rire] to be considered in the computation 
 
-    # Microsoft & Nuance 
+    # Microsoft & Genesys 
+    transformed_phase = re.sub(r"pièces|piasses", "$", transformed_phase)
+    # Microsoft & Nuance
     transformed_phase = re.sub(r"\$", " dollars", transformed_phase) # replace $ by the word dollars
     # Microsoft & Nuance & Reference 
     transformed_phase = re.sub(r"(?P<integer>\d+),(?P<decimal>\d+)", "\g<integer>.\g<decimal>", transformed_phase) # replace , by . for numbers
