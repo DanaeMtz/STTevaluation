@@ -9,6 +9,7 @@ def main():
     df = pd.read_csv("data/transcripts_dlm.csv", encoding="utf-8")
     # df = df.iloc[:61, :] # numbers
     df = df.iloc[61:, :]  # general corpus
+    print(df.columns)
 
     nuance = df.loc[:, "nuance"].tolist()
     genesys = df.loc[:, "genesys"].tolist()

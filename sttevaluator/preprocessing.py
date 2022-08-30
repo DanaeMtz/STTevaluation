@@ -25,7 +25,7 @@ def preprocessing(phase: str) -> str:
     # eliminate the space between thousands and hundreds ( ex. 51 766 $ should be 51766 $) 
     
     # reference 
-    # transformed_phase = re.sub(r"\Whésitation\W|\Wagent\sdit\sok\W", "", transformed_phase) 
+    transformed_phase = re.sub(r"\Whésitation\W|\Wagent\sdit\sok\W", "", transformed_phase) 
     # [mot]|[agent dit hmh]|[agent dit: d'accord]|[agent dit: mhm]|[rire] to be considered in the computation 
 
     # Microsoft & Genesys 
