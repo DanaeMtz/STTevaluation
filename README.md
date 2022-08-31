@@ -37,6 +37,88 @@ The entities considered in this exercise are:
 
 ### Results 
 
+### Overall performance on Corpus 670
+
+| Engin         | WER   |
+|---------------|-------|
+| Nuance        | 0.088 |
+| Genesys       | 0.142 |
+| Microsoft     | 0.075 |
+| Microsoft dlm | 0.060 |
+
+
+## Examples of mistakes 
+
+| Engin         | Transcript|
+|---------------|-----------|
+| Réference     | J'appelle pour avoir de l'information sur un taux hypothécaire
+| Nuance        | J'appelle pour avoir de l'information sur un taux hypothécaire
+| **Genesys**   | j'appelle revoir     de l'information sur un tour hypothèse   
+| Microsoft     | J'appelle pour avoir de l'information sur un taux hypothécaire
+| Microsoft dlm | J'appelle pour avoir de l'information sur un taux hypothécaire
+
+| Engin         | Transcript|
+|---------------|-----------|
+| Réference     | prélèvements qui se font dans mon compte qui s'en vont dans mon CELI puis j'aurais   aimé le faire arrêter 
+| **Nuance**    | prélèvements qui se font dans mon compte pis ce mois   dans mon CELI pis je l'aurais aimé le faire arrêter
+| Genesys       | prélève mars on          dans mon compte qui savent    dans mon coli puis j'aurais   aimé le faire arrêter
+| Microsoft     | prélèvements qui se font dans mon compte qui s'en vont dans mon celi puis j'aurais   aimé le faire arrêter
+| Microsoft dlm | prélèvements qui se font dans mon compte qui s'en vont dans mon celi puis j'aurais   aimé le faire arrêter
+
+| Engin         | Transcript|
+|---------------|-----------|
+| Réference     | Allô oui  bonjour ce serait pour mon CELI dans le fond je voudrais faire de l'épargne systématique à chaque semaine
+| Nuance        | Allô oui  bonjour ça serait pour mon CELI dans le fond je voudrais faire de l'épargne systématique à chaque semaine
+| Nuance        | Allô oui  bonjour ça serait pour mon CELI dans le fond je voudrais faire de n'est pas systématique à chaque semaine
+| **Genesys**   | allô oui  bonjour ce serait prononcé lui  dans le chan je voudrais faire de lepage systématique    à chaque semaine
+| **Genesys**   | allô      bonjour ça serait pour mon élie parfois      je voudrais faire de l'éponge systématique  à
+| Microsoft     | Allô oui  Bonjour ce serait pour mon celi dans le fond je voudrais faire de l'épargne systématique à chaque semaine
+| Microsoft     | Halloween Bonjour ce serait pour mon celi dans le fond je voudrais faire de la pensée systématique à chaque semaine
+| Microsoft dlm | Allô oui  Bonjour ce serait pour mon celi dans le fond je voudrais faire de l'épargne systématique à chaque semaine
+| Microsoft dlm | Allô oui  Bonjour ce serait pour mon celi dans le fond je voudrais faire de la pensée systématique à chaque semaine
+                  
+| Engin         | Transcript|
+|---------------|-----------|
+| Réference     | Bonjour c'est pour savoir si les paiements de mon hypothèque y passent
+| Nuance        | Bonjour c'est pour savoir si les paiements de mon hypothèque ils passent
+| **Genesys**   | bonjour c'est pour savoir                     mon hypothèque qui passe
+| Microsoft     | Bonjour c'est pour savoir si les paiements de mon hypothèque qui passent
+| Microsoft dlm | Bonjour c'est pour savoir si les paiements de mon hypothèque qui passent
+
+| Engin         | Transcript|
+|---------------|-----------|
+| Réference     | Je vous appelle aujourd'hui pour au sujet de mon CELI
+| Nuance        | Je vous appelle aujourd'hui pour le sujet de mon CELI
+| **Genesys**   | nous    appelle aujourd'hui pour au sujet de
+| Microsoft     | Je vous appelle aujourd'hui pour au sujet de mon celi
+| Microsoft dlm | Je vous appelle aujourd'hui pour au sujet de mon celi
+
+| Engin         | Transcript|
+|---------------|-----------|
+| Réference     | renouvellement de mon prêt hypothécaire puis je voulais en  discuter
+| Nuance        | renouvellement de mon prêt hypothécaire pis  je voudrais    discuter 
+| **Genesys**   | renouvellement de mon pré pote car      puis je voudrais    discuter 
+| Microsoft     | renouvellement de mon prêt hypothécaire puis je voudrais    discuter
+| Microsoft dlm | renouvellement de mon prêt hypothécaire puis je voudrais en discuter
+
+| Engin         | Transcript|
+|---------------|-----------|
+| Réference     | le taux variable que je choisirais 
+| Nuance        | le taux variable que je choisirais 
+| **Genesys**   |    tout variable que    choisira   
+| Microsoft     | le taux variable que je choisirais
+| Microsoft dlm | le taux variable que je choisirais 
+
+| Engin         | Transcript|
+|---------------|-----------|
+| Réference     | numéro de prêt hypothécaire
+| Nuance        | numéro de prêt hypothécaire
+| **Genesys**   | numéro t'as pas te car
+| Microsoft     | numéro de prêt hypothécaire
+| Microsoft dlm | numéro de prêt hypothécaire
+
+
+
 ### Corpus 61, focus on numeric entities
 
 | Engin         | Recall  | Precision | F1-score |
@@ -47,6 +129,19 @@ The entities considered in this exercise are:
 | Microsoft dlm | 0.989   |  0.994    | 0.991    |
 
 See the f1_score_numbers.xlsx file for details. 
+
+| Engin         | Transcript|
+|---------------|-----------|
+| Réference     |J'aimerais céduler   un paiement de trente neuf dollar  et soixante huit sous qui sera versé tous les 28    du mois 
+|  **Genesys**  |j'aimerais schéduler un paiement de trente neuf dollars et soixante huit sous qui sera versé tous les valus du mois
+| Microsoft dlm |J'aimerais du lait   Un paiement de 39,68$ sous                               qui sera versé tous les 28    du mois
+
+
+| Engin         | Transcript|
+|---------------|-----------|
+| Réference     | Transfer  deux mille treize dollars a mon compte REER  au premier janvier 2022 
+|  **Genesys**  | transfert deux mille treize dollars ramon contraire au premier janvier a menti
+| Microsoft dlm | Transfert 2013$                     à mon compte air   au 1 janvier 2022.
 
 
 ### Corpus 670, focus on numeric entities
@@ -59,16 +154,6 @@ See the f1_score_numbers.xlsx file for details.
 | Microsoft dlm | 0.938  |  0.941    | 0.939    |
 
 See the f1_score_numbers_corpusgen.xlsx file for details. 
-
-### Overall performance on Corpus 670
-
-| Engin         | WER   |
-|---------------|-------|
-| Nuance        | 0.088 |
-| Genesys       | 0.142 |
-| Microsoft     | 0.075 |
-| Microsoft dlm | 0.060 |
-
 
 
 ### Corpus 670, focus on banking terms
@@ -101,3 +186,7 @@ See the f1_score_bank_corpusgen.xlsx file for details.
 | le REER             | le REER           | le **r**           | le **rayer**         | le réer                  |
 | mon REER            | mon REER          | mon                | **mourir**           | **mourir**               |
 | mes REER            | mon REER          | **marre**          | **merrier**          | mes réer                 |
+
+
+
+
